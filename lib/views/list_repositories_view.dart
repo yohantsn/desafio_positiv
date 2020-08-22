@@ -19,7 +19,6 @@ class _ListRepositoriesViewState extends State<ListRepositoriesView> {
     _repositorie.readFavReposit();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +36,7 @@ class _ListRepositoriesViewState extends State<ListRepositoriesView> {
                           Icons.bookmark_border,
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context,"/favorite");
+                          Navigator.pushNamed(context, "/favorite");
                         }),
                     Positioned(
                         right: 1,
@@ -63,7 +62,7 @@ class _ListRepositoriesViewState extends State<ListRepositoriesView> {
                 ),
               ),
               onTap: () {
-                Navigator.pushNamed(context,"/favorite");
+                Navigator.pushNamed(context, "/favorite");
               })
         ],
       ),
@@ -137,11 +136,13 @@ class _ListRepositoriesViewState extends State<ListRepositoriesView> {
                                 color: Colors.black),
                             children: <TextSpan>[
                               TextSpan(
-                                  text:
-                                      "${_repositorie.repositModel[index].createdAt}" ??
-                                          "",
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.normal)),
+                                  text: "${_repositorie.repositModel[index].dateCreation.day}"
+                                          "/${_repositorie.repositModel[index].dateCreation.month}"
+                                          "/${_repositorie.repositModel[index].dateCreation.year}  "
+                                          "${_repositorie.repositModel[index].dateCreation.hour}"
+                                          ":${_repositorie.repositModel[index].dateCreation.minute}" ??
+                                      "",
+                                  style: TextStyle(fontWeight: FontWeight.normal)),
                             ]),
                       )),
                   Padding(

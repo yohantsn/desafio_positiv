@@ -73,6 +73,7 @@ class RespositorieModel {
   int openIssues;
   int watchers;
   String defaultBranch;
+  DateTime dateCreation;
 
   RespositorieModel(
       {this.id,
@@ -148,7 +149,8 @@ class RespositorieModel {
         this.forks,
         this.openIssues,
         this.watchers,
-        this.defaultBranch});
+        this.defaultBranch,
+        this.dateCreation});
 
   RespositorieModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -226,6 +228,7 @@ class RespositorieModel {
     openIssues = json['open_issues'];
     watchers = json['watchers'];
     defaultBranch = json['default_branch'];
+    dateCreation = DateTime.parse(createdAt);
   }
 
   Map<String, dynamic> toJson() {

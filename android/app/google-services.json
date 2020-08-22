@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "270112636554",
+    "firebase_url": "https://desafiopositivapp.firebaseio.com",
+    "project_id": "desafiopositivapp",
+    "storage_bucket": "desafiopositivapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270112636554:android:10a8e234223399cd287773",
+        "android_client_info": {
+          "package_name": "com.holondevs.desafio_positiv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270112636554-2bdvjp2fag002hicc2ou81judpjn1abh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPLUEHK3dbdxoad2MPyYlQVCdFnLInQWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270112636554-2bdvjp2fag002hicc2ou81judpjn1abh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "270112636554-rkon4ct42mj2l823stbonhtq49q7p5hc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.holondevs.desafioPositiv"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

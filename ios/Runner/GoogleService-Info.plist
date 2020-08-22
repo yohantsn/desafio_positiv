@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>270112636554-rkon4ct42mj2l823stbonhtq49q7p5hc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.270112636554-rkon4ct42mj2l823stbonhtq49q7p5hc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBxsiRNPREd6gCVgrfcMAohkzEyd0AKfow</string>
+	<key>GCM_SENDER_ID</key>
+	<string>270112636554</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.holondevs.desafioPositiv</string>
+	<key>PROJECT_ID</key>
+	<string>desafiopositivapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>desafiopositivapp.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:270112636554:ios:e5512550e2f9a83e287773</string>
+	<key>DATABASE_URL</key>
+	<string>https://desafiopositivapp.firebaseio.com</string>
+</dict>
+</plist>

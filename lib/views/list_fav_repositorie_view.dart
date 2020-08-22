@@ -120,11 +120,13 @@ class _ListFavRepositoriesViewState extends State<ListFavRepositoriesView> {
                                 color: Colors.black),
                             children: <TextSpan>[
                               TextSpan(
-                                  text:
-                                      "${_repositorie.repositFav[index].createdAt}" ??
-                                          "",
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.normal)),
+                                  text: "${_repositorie.repositFav[index].dateCreation.day}"
+                                          "/${_repositorie.repositFav[index].dateCreation.month}"
+                                          "/${_repositorie.repositFav[index].dateCreation.year}  "
+                                          "${_repositorie.repositFav[index].dateCreation.hour}"
+                                          ":${_repositorie.repositFav[index].dateCreation.minute}" ??
+                                      "",
+                                  style: TextStyle(fontWeight: FontWeight.normal)),
                             ]),
                       )),
                   Padding(
@@ -164,6 +166,20 @@ class _ListFavRepositoriesViewState extends State<ListFavRepositoriesView> {
                         )
                       ],
                     )),
+                Padding(
+                  padding: EdgeInsets.all(5),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.delete_outline,
+                      color: Colors.grey,
+                    ),
+                    onPressed: () async {
+                      await _repositorie
+                          .removeItemFav(_repositorie.repositFav[index]);
+                      await _repositorie.readFavReposit();
+                    },
+                  ),
+                )
               ],
             )
           ],

@@ -47,69 +47,53 @@ abstract class _RepositoriesStore with Store{
 
   @action
   saveReposit(RespositorieModel _repositModel, int index) async{
-    final file = await FileManager().getFile();
-    var resultJson = await file.readAsString();
+    this.isLoading = true;
+    Map<String,dynamic> dataJson = await FileManager().readJson();
+    List _list = List();
     bool _isEqual = false;
-    if(resultJson.isNotEmpty) {
-      List _list = json.decode(resultJson);
+    if(dataJson != null) {
+      print("aqui");
+      _list = dataJson["list"];
       _list.forEach((element) {
         if (element["id"] == _repositModel.id) {
           _isEqual = true;
           return;
         }
       });
-      if (!_isEqual) {
-        _list.add(_repositModel.toJson());
-        String data = json.encode(_list);
-        await file.writeAsString(data);
-        this.listToSave.clear();
-        _list.forEach((element) {
-          this.listToSave.add(element);
-        });
-        this.countFav = this.listToSave.length;
-      }
     }
+    if (!_isEqual) {
+      _list.add(_repositModel.toJson());
+      Map<String, dynamic> data = {"list": _list};
+      await FileManager().writeJson(data);
+      this.countFav = _list.length;
+    }
+    this.isLoading = false;
   }
 
   @action
   readFavReposit() async {
-    try {
-      final file = await FileManager().getFile();
-      var resultJson = await file.readAsString();
-      if(resultJson.isNotEmpty) {
-        List _list = json.decode(resultJson);
-        this.listToSave.clear();
-        _list.forEach((element) {
-          this.listToSave.add(element);
-        });
-        this.countFav = listToSave.length;
-      }
-    } catch (e) {
-      print(e);
+    Map<String,dynamic> data = await FileManager().readJson();
+    if(data != null) {
+      List _list = data["list"];
+      this.countFav = _list.length;
     }
   }
 
   @action
   getFavReposit() async {
-    try {
-      this.isLoading = true;
-      this.repositFav.clear();
-      final file = await FileManager().getFile();
-      var resultJson = await file.readAsString();
-      if(resultJson.isNotEmpty) {
-        List _listFav = json.decode(resultJson);
-        _listFav.forEach((element) {
-          this.repositFav.add(RespositorieModel.fromJson(element));
-        });
-        this.repositFav.sort((a, b) {
-          return b.stargazersCount.compareTo(a.stargazersCount);
-        });
-      }
-      this.isLoading = false;
-    } catch (e) {
-      print(e);
-      this.isLoading = false;
+    this.isLoading = true;
+    this.repositFav.clear();
+    final data = await FileManager().readJson();
+    if(data != null ) {
+      List _listFav = data["list"];
+      _listFav.forEach((element) {
+        this.repositFav.add(RespositorieModel.fromJson(element));
+      });
+      this.repositFav.sort((a, b) {
+        return b.stargazersCount.compareTo(a.stargazersCount);
+      });
     }
+    this.isLoading = false;
   }
 
   @action
@@ -127,9 +111,8 @@ abstract class _RepositoriesStore with Store{
     this.repositFav.forEach((element) {
       listToSave.add(element.toJson());
     });
-    String data = json.encode(this.listToSave);
-    final file = await FileManager().getFile();
-    await file.writeAsString(data);
+    Map<String,dynamic> data = {"list" : listToSave};
+    await FileManager().writeJson(data);
     this.countFav = this.listToSave.length;
     print(this.countFav);
     this.isLoading = false;
