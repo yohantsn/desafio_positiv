@@ -1,16 +1,9 @@
 # desafio_positiv
 
-A new Flutter application.
+App para o desafio proposto pela PositivApp
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+O projeto consiste em listar o repositorio publico do Flutter.
+Ao clicar no ícone do coração o repositorio em questão será salvo no firebase.
+Na tela de favoritos, que pode ser acessado clicando no ícone superior direito, você será redirecionado para tela com os repositórios favoritados. Para excluir um repositório basta clicar no botão  em formato de lixeira ou arrastar o card para o lado direito.
