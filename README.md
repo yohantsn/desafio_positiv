@@ -1,6 +1,6 @@
 # desafio_positiv
 
-App para o desafio proposto pela PositivApp
+App para aprendizado
 
 ## Getting Started
 
